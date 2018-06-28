@@ -26,7 +26,7 @@ echo -n "**** PUSHING VERSION:$VERSION $BASE TO $USER/$IMAGE.git ****"
 git push
 git push --tags
 echo -n "**** DOCKER IMAGE TAGGING VERSION:$VERSION $BASE TO $USER/$IMAGE:$VERSION (alpinelinux) ****"
-docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$VERSION
+docker tag $USERNAME/$IMAGE $USERNAME/$IMAGE:$VERSION
 
 # push it
 echo -n "**** PUSHING DOCKER IMAGE VERSION:$VERSION $BASE TO $USER/$IMAGE:$VERSION (alpinelinux)[hub.docker.com]****"

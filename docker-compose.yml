@@ -1,7 +1,7 @@
 version: '3'
 services:
   pxe2-0:
-    image: "${USERNAME}/${IMAGE}:${VERSION}"
+    image: "${USERNAME}/${IMAGE}"
     container_name: pxe2-0
     build:
       context: .
