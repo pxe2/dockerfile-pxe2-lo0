@@ -1,0 +1,8 @@
+version: '3'
+services:
+  pxe2-0:
+    image: "${USERNAME}/${IMAGE}:${VERSION}"
+    container_name: pxe2-0
+    build:
+      context: .
+      dockerfile: Dockerfile
