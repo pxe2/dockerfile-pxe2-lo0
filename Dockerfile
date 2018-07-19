@@ -19,6 +19,10 @@ ENV bootfile=$BOOTFILE
 
 RUN \
   echo "!!! Adding basic iPXE build packages !!!" \
+  && echo "dhcp_mode: "$dhcp_mode  \
+  && echo "dhcp_range: "$dhcp_range  \
+  && echo "pxe2_url: "$pxe2_url  \
+  && echo "bootfile: "$bootfile  \
   && apk add --no-cache --virtual build-dependencies dnsmasq \
   && mkdir -p /opt/tftpboot
 ADD https://boot.netboot.xyz/ipxe/netboot.xyz.kpxe /opt/tftpboot/netboot.xyz.kpxe

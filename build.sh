@@ -2,6 +2,7 @@
 set -ex
 # SET THE FOLLOWING VARIABLES
 # docker hub username
+source .env
 USERNAME=pxe2
 # image name
 IMAGE=pxe2-lo0
