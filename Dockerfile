@@ -21,6 +21,8 @@ RUN \
   echo "!!! Adding basic iPXE build packages !!!" \
   && apk add --no-cache --virtual build-dependencies dnsmasq \
   && mkdir -p /opt/tftpboot
+ADD https://boot.netboot.xyz/ipxe/netboot.xyz.kpxe /opt/tftpboot/netboot.xyz.kpxe
+ADD https://boot.netboot.xyz/ipxe/netboot.xyz-undionly.kpxe /opt/tftpboot/undionly.kpxe
 COPY dnsmasq.d /opt/dnsmasq.d
 EXPOSE 67 67/udp
 EXPOSE 53 53/udp
