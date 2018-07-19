@@ -19,14 +19,14 @@ ENV bootfile=$BOOTFILE
 
 RUN \
   echo "!!! Adding basic iPXE build packages !!!" \
-  && echo "dhcp_mode: "$dhcp_mode  \
-  && echo "dhcp_range: "$dhcp_range  \
-  && echo "pxe2_url: "$pxe2_url  \
-  && echo "bootfile: "$bootfile  \
+  && echo "dhcp_mode: "$DHCP_MODE  \
+  && echo "dhcp_range: "$DHCP_RANGE  \
+  && echo "pxe2_url: "$PXE2_URL  \
+  && echo "bootfile: "$BOOTFILE  \
   && apk add --no-cache --virtual build-dependencies dnsmasq \
   && mkdir -p /opt/tftpboot
-ADD https://boot.netboot.xyz/ipxe/netboot.xyz.kpxe /opt/tftpboot/netboot.xyz.kpxe
-ADD https://boot.netboot.xyz/ipxe/netboot.xyz-undionly.kpxe /opt/tftpboot/undionly.kpxe
+ADD https://boot.netboot.xyz/ipxe/netboot.xyz.kpxe /opt/tftpboot/ipxe.0
+ADD https://boot.netboot.xyz/ipxe/netboot.xyz-undionly.kpxe /opt/tftpboot/undionly.0
 COPY dnsmasq.d /opt/dnsmasq.d
 EXPOSE 67 67/udp
 EXPOSE 53 53/udp
