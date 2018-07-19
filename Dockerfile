@@ -30,4 +30,4 @@ ADD https://boot.netboot.xyz/ipxe/netboot.xyz-undionly.kpxe /opt/tftpboot/undion
 COPY dnsmasq.d /opt/dnsmasq.d
 EXPOSE 67 67/udp
 EXPOSE 53 53/udp
-ENTRYPOINT ["dnsmasq", "-q -d --conf-file=/opt/dnsmasq.d/${dhcp_mode}.conf --dhcp-broadcast"]
+ENTRYPOINT ["dnsmasq", "-q -d --conf-file=/opt/dnsmasq.d/ProxyDHCP.conf --dhcp-broadcast"]
