@@ -31,4 +31,4 @@ COPY dnsmasq.d /opt/dnsmasq.d
 EXPOSE 67 67/udp
 EXPOSE 53 53/udp
 #ENTRYPOINT ["dnsmasq", "-q -d --conf-file=/opt/dnsmasq.d/ProxyDHCP.conf --dhcp-broadcast"]
-ENTRYPOINT ["dnsmasq -q -d --conf-file=/opt/dnsmasq.d/ProxyDHCP.conf --dhcp-broadcast"]
+ENTRYPOINT ["/usr/sbin/dnsmasq -q -d --conf-file=/opt/dnsmasq.d/ProxyDHCP.conf --dhcp-broadcast"]
